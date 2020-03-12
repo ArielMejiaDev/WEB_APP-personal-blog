@@ -69,7 +69,7 @@ class BlogTest extends TestCase
     public function testPostsByCategoryTag()
     {
         $tag      = WinkTag::first()->only('slug')['slug'];
-        $posts    = WinkTag::whereSlug($tag)->first()->posts()->paginate( (new BlogController)->resultsPerPage );
+        $posts    = WinkTag::whereSlug($tag)->first()->posts()->paginate( (new BlogController)->resultsPerCategoryPage );
         $request  = $this->get("/api/v1/blog/category/{$tag}");
         $request->assertOk();
         $response = $request->json();

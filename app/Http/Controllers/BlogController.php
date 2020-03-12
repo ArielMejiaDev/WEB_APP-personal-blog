@@ -11,6 +11,7 @@ use Wink\WinkTag;
 class BlogController extends Controller
 {
     public $resultsPerPage = 7;
+    public $resultsPerCategoryPage = 6;
 
     /**
      * Display a listing of the resource.
@@ -61,7 +62,7 @@ class BlogController extends Controller
      */
     public function postsByTag($slug)
     {
-        $posts = WinkTag::whereSlug($slug)->first()->posts()->paginate($this->resultsPerPage);
+        $posts = WinkTag::whereSlug($slug)->first()->posts()->paginate($this->resultsPerCategoryPage);
         return Post::collection($posts);
     }
 
