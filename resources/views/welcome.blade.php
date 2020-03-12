@@ -73,6 +73,7 @@
 
                 <div class="links">
                     <a href="/admin">Blog</a>
+                    <a href="https://arielmejia.dev">My site</a>
                 </div>
             </div>
         </div>
